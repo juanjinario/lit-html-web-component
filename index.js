@@ -1,3 +1,5 @@
+import { html, render } from 'lit-html';
+
 class AppElement extends HTMLElement {
     
     name = this.getAttribute('name') || 'NoName';
@@ -6,9 +8,8 @@ class AppElement extends HTMLElement {
         super();
         console.log('inicializando...');
         this.hello = 'web0';
-        // On active shadow hide the component, without shadow component it is in the light Doom it is visible
         this.attachShadow({ mode: "open" });
-        this.shadowRoot.innerHTML = `
+        const template = html`
             <style>
                 :host {
                     border: 1px solid white;
@@ -24,11 +25,9 @@ class AppElement extends HTMLElement {
             </style>
             <slot></slot>
             <p part="paragraph">${ this.hello } ${ this.name }</p>
-            <button>Click me!</button>
+            <button @click="${ this.clickMe }">Click me!</button>
         `;
-        // this.textContent = 'webo';  Only for write text
-        this.button = this.shadowRoot.querySelector('button');
-        this.button.onclick = (e) => this.clickMe(e);
+        render(template, this.shadowRoot, this);
     }
 
     clickMe(e) {
