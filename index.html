@@ -2,6 +2,7 @@
 <head>
     <title>My web component</title>
     <script type="module" src="./index.js"></script>
+    <script type="module" src="./index-with-slots.js"></script>
     <link rel="stylesheet" href="styles.css">
 </head>
 <body>
@@ -11,6 +12,12 @@
         }
     </style>
     <app-element name="Jhonny"><span>neco</span></app-element>
+
+    <app-element-slots>
+        <!-- Visible for spider -->
+        <div class="header-text" slot="header">neco</div>
+        <div slot="nav">menu nav</div>
+    </app-element-slots>
     <script>
         document.addEventListener("poc:message", (e) => {
             console.log(e.detail.msg);
