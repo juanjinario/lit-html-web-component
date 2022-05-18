@@ -4,7 +4,8 @@
   "description": "lit html web component",
   "main": "index.js",
   "scripts": {
-    "test": "echo \"Error: no test specified\" && exit 1"
+    "test": "echo \"Error: no test specified\" && exit 1",
+    "start": "npx es-dev-server --watch --node-resolve --open"
   },
   "author": "",
   "license": "ISC",
