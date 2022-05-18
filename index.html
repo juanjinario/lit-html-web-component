@@ -1,0 +1,19 @@
+<!DOCTYPE html>
+<head>
+    <title>My web component</title>
+    <script type="module" src="./index.js"></script>
+    <link rel="stylesheet" href="styles.css">
+</head>
+<body>
+    <style>
+        span {
+            color: red;
+        }
+    </style>
+    <app-element name="Jhonny"><span>neco</span></app-element>
+    <script>
+        document.addEventListener("poc:message", (e) => {
+            console.log(e.detail.msg);
+        });
+    </script>
+</body>

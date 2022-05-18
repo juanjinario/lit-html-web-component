@@ -1,0 +1,13 @@
+:root {
+    --primary-color: magenta;
+}
+
+body {
+    background-color: aliceblue;
+}
+
+/* Part allow css modification inside web component */
+app-element::part(paragraph) {
+    display: block;
+    font-size: x-large;
+}
