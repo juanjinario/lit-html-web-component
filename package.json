@@ -1,5 +1,5 @@
 {
-  "name": "lit-html",
+  "name": "lit-html-web-component",
   "version": "1.0.0",
   "description": "lit html web component",
   "main": "index.js",
