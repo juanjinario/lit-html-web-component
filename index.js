@@ -27,6 +27,8 @@ class AppElement extends HTMLElement {
             <p part="paragraph">${ this.hello } ${ this.name }</p>
             <button @click="${ this.clickMe }">Click me!</button>
         `;
+
+        // render(template, document.body, this); If it is not active shadow
         render(template, this.shadowRoot, this);
     }
 
@@ -37,7 +39,12 @@ class AppElement extends HTMLElement {
             bubbles: true,
             detail: {
                 msg: 'Hellow from inside'
-            }
+            },
+            /* 
+                The read-only composed property of the Event interface returns a boolean value which indicates 
+                whether or not the event will propagate across the shadow DOM boundary into the standard DOM. 
+            */
+            composed: true,
         });
         this.dispatchEvent(message);
     }
