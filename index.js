@@ -1,4 +1,5 @@
-import { html, render } from 'lit-html';
+import { html, render, LitElement } from 'lit-element';
+import {  } from 'lit-element';
 
 class AppElement extends HTMLElement {
     
